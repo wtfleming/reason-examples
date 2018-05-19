@@ -1,2 +1,4 @@
+* TODO rename sum.test.js to be Math_fns.test.js (or MathFns.test.js?)
+* TODO rename ArrayFns to be ListFns since it currently just a function on lists instead of arrays
 * TODO Add a .rei file for Javascript_Interop functions
 * TODO Reverse a list and tests
