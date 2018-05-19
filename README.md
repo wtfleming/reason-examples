@@ -1,18 +1,22 @@
-# Basic Reason Template
+# reason-examples
 
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
+Examples for the Reason programming language. https://reasonml.github.io/
 
-# Build
+Currently unit tests are written in JavaScript using Jest. At some point it may be worth looking into bs-jest https://github.com/glennsl/bs-jest so they can be written in Reason/BuckleScript. Or potentially look at OUnit http://ounit.forge.ocamlcore.org/ and write them in Reason/OCaml.
+
+
+## Build
 ```
-npm run build
-```
-
-# Build + Watch
-
-```
-npm run start
+yarn build
 ```
 
+## Build + Watch
 
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
+```
+yarn start
+```
+
+## Run the unit tests
+```
+yarn test
+```
