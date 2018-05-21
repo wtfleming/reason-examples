@@ -2,7 +2,7 @@
 
 const ReasonArrayFns = require("bs-platform/lib/js/array.js");
 // const ArrayFns = require('../src/arrayfns.bs.js');
-const BinarySearchTree = require('../src/BinarySearchTree.bs.js');
+const BinarySearchTree = require('../src/data-structures/BinarySearchTree.bs.js');
 
 test('make()', () => {
   expect(BinarySearchTree.make(5)).toEqual([5, 0 , 0]);

@@ -1,7 +1,7 @@
 "use strict";
 
 const ReasonArrayFns = require("bs-platform/lib/js/array.js");
-const List = require('../src/List.bs.js');
+const List = require('../src/data-structures/List.bs.js');
 
 test('make()', () => {
   expect(List.to_array(List.make())).toEqual([]);
