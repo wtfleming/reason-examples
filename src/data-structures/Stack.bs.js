@@ -35,8 +35,17 @@ function peek(stack) {
   }
 }
 
+function is_empty(stack) {
+  if (stack) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 exports.make = make;
 exports.push = push;
 exports.pop = pop;
 exports.peek = peek;
+exports.is_empty = is_empty;
 /* No side effect */

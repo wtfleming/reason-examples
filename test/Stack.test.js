@@ -50,3 +50,12 @@ test('pop()', () => {
   expect(Stack.peek(stack)).toEqual(0); // Maybe this should be an exception rather than 0?
 });
 
+test('is_empty()', () => {
+  let stack = Stack.make();
+  expect(Stack.is_empty(stack)).toEqual(true);
+  stack = Stack.push(5, stack);
+  expect(Stack.is_empty(stack)).toEqual(false);
+  let x;
+  [x, stack] = Stack.pop(stack);
+  expect(Stack.is_empty(stack)).toEqual(true);
+});

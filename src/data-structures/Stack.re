@@ -13,3 +13,9 @@ let peek = stack =>
   | [] => 0
   | [h, ..._] => h
   };
+
+let is_empty = stack =>
+  switch (stack) {
+  | [] => true
+  | _ => false
+  };
