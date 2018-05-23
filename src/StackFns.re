@@ -1,5 +1,3 @@
-let string_to_list = str => Js.String.split("", str) |> Array.to_list;
-
 /* do opening ({ characters have matching closing )} ones? */
 let is_balanced = (str: Js.String.t) : bool => {
   let rec do_is_balanced = (stack, s: list(string)) =>
@@ -19,5 +17,5 @@ let is_balanced = (str: Js.String.t) : bool => {
       }
     | [_, ...tail] => do_is_balanced(stack, tail)
     };
-  do_is_balanced(Stack.make(), string_to_list(str));
+  do_is_balanced(Stack.make(), StringFns.string_to_list(str));
 };
