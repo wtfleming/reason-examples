@@ -1,10 +1,11 @@
-let make = () => [];
+let make = () : list('a) => [];
 
 let push = (x, stack) => [x, ...stack];
 
+/* let pop = (stack: list(string)) => */
 let pop = stack =>
   switch (stack) {
-  | [] => (0, []) /* maybe return None here instead, or throw an exception? */
+  | [] => raise(Not_found)
   | [h, ...stack] => (h, stack)
   };
 
