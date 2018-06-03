@@ -1,0 +1,24 @@
+{
+  "name": "bs-tilemap",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "parcel": "parcel index.html",
+    "parcel:watch": "parcel watch index.html",
+    "parcel:build": "parcel build index.html"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^3.1.5",
+    "parcel-bundler": "^1.8.1"
+  },
+  "dependencies": {
+    "bs-webapi": "^0.9.1"
+  }
+}
