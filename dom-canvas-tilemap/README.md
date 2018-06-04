@@ -1,6 +1,6 @@
-# dom-canvas-tilemap
+# bs-canvas-tilemap
 
-Example of drawing a tilemap on a HTML canvas.
+Example of drawing a tilemap on a HTML canvas from Reason. Along the lines of https://developer.mozilla.org/en-US/docs/Games/Techniques/Tilemaps
 
 # Install dependencies
 ```
