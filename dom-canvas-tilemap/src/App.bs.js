@@ -4,10 +4,7 @@
 var List = require("bs-platform/lib/js/list.js");
 var Js_math = require("bs-platform/lib/js/js_math.js");
 var Caml_int32 = require("bs-platform/lib/js/caml_int32.js");
-var Demo$BsTilemap = require("./Demo.bs.js");
 var Caml_builtin_exceptions = require("bs-platform/lib/js/caml_builtin_exceptions.js");
-
-console.log(Demo$BsTilemap.foo);
 
 function setOnloadFn(fn) {
   window.onload = fn;

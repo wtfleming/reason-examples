@@ -19,6 +19,6 @@
     "parcel-bundler": "^1.8.1"
   },
   "dependencies": {
-    "bs-webapi": "^0.9.1"
+
   }
 }

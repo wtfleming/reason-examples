@@ -4,8 +4,6 @@
 
 /* Sprites modified from file at: http://files.sablab.net/Games/Angband/Angband/lib/xtra/graf/16x16.bmp  License: http://angband.oook.cz/forum/showpost.php?p=316&postcount=16  "Sounds fine to me. I did it for enjoyment at the time, I never really licensed them. I don't actually care if the tiles are altered, or if I even get credit for them. Have at it." */
 
-Js.log(Demo.foo);
-
 module Window = {
   type t;
   [@bs.val] external t : t = "window";
