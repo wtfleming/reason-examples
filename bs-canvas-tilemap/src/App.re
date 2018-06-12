@@ -94,7 +94,7 @@ module SpriteAtlas = {
       ctx,
       ~image=atlas.imageElement,
       ~dx=atlasNumber * atlas.spriteWidth,
-      ~dy=0, /* We only support atlases with a single row of images, so this will always be 0 */
+      ~dy=0, /* In this example we only support atlases with a single row of images, so this will always be 0 */
       ~dWidth=atlas.spriteWidth,
       ~dHeight=atlas.spriteWidth,
       ~sx=x,
