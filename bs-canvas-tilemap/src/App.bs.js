@@ -6,27 +6,22 @@ var Js_math = require("bs-platform/lib/js/js_math.js");
 var Caml_int32 = require("bs-platform/lib/js/caml_int32.js");
 var Caml_builtin_exceptions = require("bs-platform/lib/js/caml_builtin_exceptions.js");
 
-function setOnloadFn(fn) {
-  window.onload = fn;
-  return /* () */0;
-}
-
-var Window = /* module */[/* setOnloadFn */setOnloadFn];
+var Window = /* module */[];
 
 var Document = /* module */[];
 
 function loadFromSrc(imageSrc) {
   var imageEl = new Image();
   var loadImagePromise = new Promise((function (resolve, reject) {
-          imageEl.onload = (function () {
-              return resolve(imageEl);
-            });
-          imageEl.onerror = (function () {
-              return reject([
-                          Caml_builtin_exceptions.invalid_argument,
-                          "Could not load image: " + imageSrc
-                        ]);
-            });
+          imageEl.addEventListener("load", (function () {
+                  return resolve(imageEl);
+                }));
+          imageEl.addEventListener("error", (function () {
+                  return reject([
+                              Caml_builtin_exceptions.invalid_argument,
+                              "Could not load image: " + imageSrc
+                            ]);
+                }));
           return /* () */0;
         }));
   imageEl.src = imageSrc;
@@ -35,11 +30,7 @@ function loadFromSrc(imageSrc) {
 
 var HtmlImageElement = /* module */[/* loadFromSrc */loadFromSrc];
 
-function getElementById(id) {
-  return document.getElementById(id);
-}
-
-var Canvas = /* module */[/* getElementById */getElementById];
+var Canvas = /* module */[];
 
 var Context = /* module */[];
 
@@ -126,7 +117,7 @@ function doWindowOnload() {
   return /* () */0;
 }
 
-window.onload = doWindowOnload;
+window.addEventListener("load", doWindowOnload);
 
 exports.Window = Window;
 exports.Document = Document;

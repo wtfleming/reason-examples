@@ -7,8 +7,10 @@
 module Window = {
   type t;
   [@bs.val] external t : t = "window";
-  [@bs.set] external setOnload : (t, unit => unit) => unit = "onload";
-  let setOnloadFn = fn => setOnload(t, fn);
+
+  [@bs.send]
+  external addEventListener : (t, string, unit => unit) => unit =
+    "addEventListener";
 };
 
 module Document = {
@@ -18,22 +20,23 @@ module Document = {
 
 module HtmlImageElement = {
   type t;
-  [@bs.val] external t : t = "";
   [@bs.new] external make : unit => t = "Image";
 
   [@bs.set] external setSrc : (t, string) => unit = "src";
-  [@bs.set] external setOnload : (t, unit => unit) => unit = "onload";
-  [@bs.set] external setOnerror : (t, unit => unit) => unit = "onerror";
 
-  /* Function that creates a html <img> element, and return a promise that */
-  /* resolves when the image has finished loading. */
+  [@bs.send]
+  external addEventListener : (t, string, unit => unit) => unit =
+    "addEventListener";
+
+  /* Create a html <img> element, and return a promise that resolves when the */
+  /* image has finished loading. */
   let loadFromSrc = imageSrc => {
     let imageEl = make();
 
     let loadImagePromise =
       Js.Promise.make((~resolve, ~reject) => {
-        setOnload(imageEl, () => resolve(. imageEl));
-        setOnerror(imageEl, () =>
+        addEventListener(imageEl, "load", () => resolve(. imageEl));
+        addEventListener(imageEl, "error", () =>
           reject(. Invalid_argument("Could not load image: " ++ imageSrc))
         );
       });
@@ -46,8 +49,7 @@ module HtmlImageElement = {
 module Canvas = {
   type t;
   [@bs.send]
-  external doGetElementById : (Document.t, string) => t = "getElementById";
-  let getElementById = id : t => doGetElementById(Document.t, id);
+  external getElementById : (Document.t, string) => t = "getElementById";
 };
 
 module Context = {
@@ -144,7 +146,7 @@ module TileMap = {
 };
 
 let doWindowOnload = () => {
-  let canvas: Canvas.t = Canvas.getElementById("demo");
+  let canvas: Canvas.t = Canvas.getElementById(Document.t, "demo");
   let ctx: Context.t = Context.getContext2d(canvas);
   SpriteAtlas.make("./tiles16.png", 16)
   |> Js.Promise.then_(atlas => {
@@ -189,5 +191,4 @@ let doWindowOnload = () => {
   |> ignore;
 };
 
-/* Allows us to avoid something like: [%bs.raw {| window.onload = doWindowOnload |}]; */
-Window.setOnloadFn(doWindowOnload);
+Window.addEventListener(Window.t, "load", doWindowOnload);
