@@ -150,10 +150,6 @@ let doWindowOnload = () => {
   let ctx: Context.t = Context.getContext2d(canvas);
   SpriteAtlas.make("./tiles16.png", 16)
   |> Js.Promise.then_(atlas => {
-       /* let tiles = [2, 2, 2, 3, 2]; */
-       /* let tilemap = */
-       /*   TileMap.make(~atlas, ~numRows=1, ~numCols=5, ~tileSize=16, ~tiles); */
-
        /*     let tiles = [ */
        /*   2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, */
        /*   2, 1, 1, 1, 1, 2, 5, 1, 1, 1, 1, 1, 1, 1, 1, 2, */
