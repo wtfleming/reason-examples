@@ -149,6 +149,7 @@ let doWindowOnload = () => {
   let canvas: Canvas.t = Canvas.getElementById(Document.t, "demo");
   let ctx: Context.t = Context.getContext2d(canvas);
   SpriteAtlas.make("./tiles16.png", 16)
+  /* SpriteAtlas.make("/images/reason-canvas-tilemap-1/tiles16.png", 16) */
   |> Js.Promise.then_(atlas => {
        /*     let tiles = [ */
        /*   2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, */
