@@ -2,6 +2,8 @@
 
 Example of drawing a tilemap on a HTML canvas from Reason. Along the lines of https://developer.mozilla.org/en-US/docs/Games/Techniques/Tilemaps
 
+A live example can be seen at http://wtfleming.github.io/2018/06/17/reason-html-canvas-tilemap/
+
 # Install dependencies
 ```
 yarn install
