@@ -13,3 +13,6 @@ let _result = sqrt(abs_float(-3.75));
 /* Javascript math library */
 let r = 5.0;
 let area = Js.Math._PI *. r *. r;
+
+/* Random number between 0.0 and 1.0 */
+Js.log(Js.Math.random());

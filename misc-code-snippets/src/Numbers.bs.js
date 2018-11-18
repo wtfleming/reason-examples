@@ -10,6 +10,8 @@ var _result = Math.sqrt(Math.abs(-3.75));
 
 var area = Math.PI * 5.0 * 5.0;
 
+console.log(Math.random());
+
 var ints = 12;
 
 var r = 5.0;
