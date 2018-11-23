@@ -6,4 +6,4 @@ yarn parcel:build
 open dist/index.html
 ```
 
-![raytraced image](/raytracing1.png)
+![raytraced image](/ray-tracer/raytracing1.png)
