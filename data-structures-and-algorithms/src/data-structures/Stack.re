@@ -1,8 +1,9 @@
-let make = () : list('a) => [];
+type t;
+
+let make = (): list('a) => [];
 
 let push = (x, stack) => [x, ...stack];
 
-/* let pop = (stack: list(string)) => */
 let pop = stack =>
   switch (stack) {
   | [] => raise(Not_found)
