@@ -6,26 +6,26 @@
 
 module Window = {
   type t;
-  [@bs.val] external t : t = "window";
+  [@bs.val] external t: t = "window";
 
   [@bs.send]
-  external addEventListener : (t, string, unit => unit) => unit =
+  external addEventListener: (t, string, unit => unit) => unit =
     "addEventListener";
 };
 
 module Document = {
   type t;
-  [@bs.val] external t : t = "document";
+  [@bs.val] external t: t = "document";
 };
 
 module HtmlImageElement = {
   type t;
-  [@bs.new] external make : unit => t = "Image";
+  [@bs.new] external make: unit => t = "Image";
 
-  [@bs.set] external setSrc : (t, string) => unit = "src";
+  [@bs.set] external setSrc: (t, string) => unit = "src";
 
   [@bs.send]
-  external addEventListener : (t, string, unit => unit) => unit =
+  external addEventListener: (t, string, unit => unit) => unit =
     "addEventListener";
 
   /* Create a html <img> element, and return a promise that resolves when the */
@@ -49,7 +49,7 @@ module HtmlImageElement = {
 module Canvas = {
   type t;
   [@bs.send]
-  external getElementById : (Document.t, string) => t = "getElementById";
+  external getElementById: (Document.t, string) => t = "getElementById";
 };
 
 module Context = {
@@ -57,10 +57,10 @@ module Context = {
 
   /* JavaScript equivalent: canvas.getContext('2d'); */
   [@bs.send]
-  external getContext2d : (Canvas.t, [@bs.as "2d"] _) => t = "getContext";
+  external getContext2d: (Canvas.t, [@bs.as "2d"] _) => t = "getContext";
 
   [@bs.send]
-  external drawImage :
+  external drawImage:
     (
       t,
       ~image: HtmlImageElement.t,
@@ -122,7 +122,7 @@ module TileMap = {
   };
 
   /* Given an index in a tilemap, get the row and column as if it was a 2D array */
-  let getRowAndColumn = (idx: int, tilemap: t) : (int, int) => {
+  let getRowAndColumn = (idx: int, tilemap: t): (int, int) => {
     let col: int = idx mod tilemap.numCols;
     let row: int =
       Js.Math.floor(float_of_int(idx) /. float_of_int(tilemap.numCols));
