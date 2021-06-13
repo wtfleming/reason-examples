@@ -1,5 +1,4 @@
-// This is the configuration file used by BuckleScript's build system bsb. Its documentation lives here: http://bucklescript.github.io/bucklescript/docson/#build-schema.json
-// BuckleScript comes with its own parser for bsconfig.json, which is normal JSON, with the extra support of comments and trailing commas.
+
 {
   "name": "bs-webapi-example",
   "version": "0.1.0",
@@ -13,12 +12,11 @@
   },
   "suffix": ".bs.js",
   "bs-dependencies": [
-    // add your dependencies here. You'd usually install them normally through `npm install my-dependency`. If my-dependency has a bsconfig.json too, then everything will work seamlessly.
     "bs-webapi"
   ],
   "warnings": {
+    "number": "-52",
     "error" : "+101"
   },
-  "namespace": true,
-  "refmt": 3
+  "namespace": true
 }

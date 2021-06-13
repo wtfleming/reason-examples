@@ -10,8 +10,8 @@ Js.log({j|Result is $result|j}); /* outputs "Result is 5.43" */
 
 /* Strings with unicode */
 /* WRONG, prints Prix avant reÌduction: 5.43 â¬ */
-Js.log("Prix avant réduction: " ++ string_of_float(5.43) ++ " €");
+Js.log("Prix avant réduction: " ++ Js.Float.toString(5.43) ++ " €");
 /* CORRECT */
 Js.log(
-  {js|Prix avant réduction: |js} ++ string_of_float(5.43) ++ {js| €|js},
+  {js|Prix avant réduction: |js} ++ Js.Float.toString(5.43) ++ {js| €|js},
 );

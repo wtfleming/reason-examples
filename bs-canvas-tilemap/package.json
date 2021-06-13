@@ -2,23 +2,20 @@
   "name": "bs-tilemap",
   "version": "0.1.0",
   "scripts": {
-    "build": "bsb -make-world",
+    "format": "bsrefmt --in-place src/*.re",
+    "build-dev": "rm -rf .parcel-cache dist && bsb -make-world && parcel build index.html --public-url ./ && cp tiles16.png dist/tiles16.png",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
     "parcel": "parcel index.html",
     "parcel:watch": "parcel watch index.html",
     "parcel:build": "parcel build index.html"
   },
-  "keywords": [
-    "BuckleScript"
-  ],
+  "keywords": [ "BuckleScript" ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^4.0.7",
-    "parcel-bundler": "^1.8.1"
+    "bs-platform": "^9.0.2",
+    "parcel": "^2.0.0-beta.3.1"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
